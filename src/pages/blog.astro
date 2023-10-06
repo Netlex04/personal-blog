@@ -1,6 +1,6 @@
 ---
 import "../styles/style.css"
-const {tag} = Astro.params;
+const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <html lang="en">
@@ -9,13 +9,9 @@ const {tag} = Astro.params;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
+		<title>Blog</title>
 	</head>
 	<body>
-		<h1>{Astro.params}</h1>
-		<button id="btn">click</button>
+		<h1>Satro lbog</h1>
 	</body>
-	<script>
-		
-	</script>
 </html>
