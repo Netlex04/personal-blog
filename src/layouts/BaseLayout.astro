@@ -1,5 +1,5 @@
 ---
-import "../styles/style.css"
+import "../styles/main.css"
 const {pageTitle} = Astro.props
 ---
 
@@ -11,7 +11,53 @@ const {pageTitle} = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body>
+	<header>
+		<nav>
+			<div class="navbar flex-row space-between align-center">
+				<div class="wide-container">
+					<div class="content-wrapper">
+						<img src="" alt="">
+					</div>
+					<div class="flex-row space-between align-center">
+						<div class="nav-link">
+							<a class="white-text">About Me</a>
+						</div>
+						<div class="nav-link">
+							<a class="white-text">Read Blog</a>
+						</div>
+						<div class="nav-link">
+							<a class="white-text">Stay Ahead</a>
+						</div>
+					</div>
+					<div class="flex-row space-between align-center">
+	
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
 		<slot />
-	</body>
+	</main>
+	<footer>
+		<section class="footer">
+			<div class="wide-container">
+				<div class="flex-row">
+					<div class="flex-row">
+						<div class="content-wrapper">
+							<h4 class="white-text">Navigation</h4>
+							<a href="" class="bright-text">aaa</a>
+						</div>
+					</div>
+					<div class="flex-row">
+						<div class="content-wrapper"></div>
+					</div>
+					<div class="flex-row">
+						<div class="content-wrapper"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</footer>
 </html>

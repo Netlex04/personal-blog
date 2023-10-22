@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -16,19 +18,72 @@
 }
 body {
     background-color: var(--bg-1);
+    
 }
 .container {
     max-width: 1100px;
     margin: 0 auto;
 }
+section {
+    padding: 128px 0 128px 0;
+    position: relative;
+}
+section.bg-1 {
+    
+    background-image: url("../resources/grid-bg.webp");
+    z-index: 2;
+    
+}
+section.bg-1::before {
+    content: "";
+    background: linear-gradient(90deg, var(--bg-1) 0%, rgba(0, 0, 0, 0) 50%, var(--bg-1) 100%),
+                linear-gradient(0deg, var(--bg-1) 0%, rgba(0, 0, 0, 0) 10%, var(--bg-1) 100%);
+    z-index: -1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 section.bg-2 {
+    background-color: var(--bg-2);
+}
+section.hero {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    background-image: url("../resources/final-bg.webp");
+    background-size: cover;
+    background-position: top;
+    background-position-y: 50%;
+    z-index: 1; /* To ensure the background is behind the skyscrapers */
+}
+section.hero::before {
+    content: "";
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, var(--bg-1) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+}
+section.footer {
+    padding-top: 0;
+    padding-bottom: 128px;
     background-color: var(--bg-2);
 }
 .card {
     border: solid 3px var(--outline);
     border-radius: 16px;
     background-color: var(--card);
+    padding: 2rem 3rem;
+}
+.topics {
+    width: 80%;
+    border-radius: 16px;
+    background-color: black;
     padding: 3em 3.5em;
+    margin-top: 4rem;
+    border-top: solid 3rem var(--dark-text);
 }
 .flex-row {
     display: flex;
@@ -38,41 +93,106 @@ section.bg-2 {
     display: flex;
     flex-direction: column;
 }
-.flex-item.base-40 {
-
+.gap {
+    gap: 1.5rem;
 }
-.flex-item.base-50 {
-
+.button-row {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2em;
 }
-.flex-item.base-60 {
-    
+.center {
+    justify-content: center;
+}
+.start {
+    justify-content: flex-start;
+}
+.end {
+    justify-content: flex-end;
+}
+.space-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+.align-start {
+    align-items: flex-start;
+}
+.navbar {
+    padding: 32px 0 32px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.wide-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.nav-link {
+    padding: 0 16px 0 16px;
+}
+.base-40 {
+    flex-basis: 40%;
+}
+.base-50 {
+    flex-basis: 50%;
+}
+.base-60 {
+    flex-basis: 60%;
 }
 .content-wrapper.left {
 
 }
-.content-wrapper.centered {
-
+.center-font {
+    text-align: center;
 }
 h1 {
-
+    font-size: 75.76px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
 }
 h2 {
-    
+    font-size: 56.83px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    max-width: 20ch;
 }
 h3 {
-    
+    font-size: 42.63px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
 }
 h4 {
-    
+    font-size: 23.99px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
 }
-p {
+p { 
+    font-size: 18px;
+    margin-top: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+.narrow {
+    max-width: 55ch;
+}
+.wide {
     max-width: 75ch;
 }
 p.small {
-
+    font-size: 13.5px;
 }
 .bold {
-
+    font-weight: 700;
+}
+.semi-bold {
+    font-weight: 600;
 }
 .white-text {
     color: white;
@@ -92,9 +212,31 @@ p.small {
 .cta-text {
     color: var(--cta);
 }
-.primary-cta {
-
+button.primary-cta {
+    padding: 16px 40px;
+    border: none;
+    background-color: var(--cta);
+    color: black;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    font-weight: bold;
 }
-.secondary-cta {
+button.secondary-cta {
+    padding: 16px 40px;
+    border: solid 3px var(--cta);
+    color: white;
     
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    border-radius: 8px;
+}
+a.tertiary-cta {
+    color: var(--cta);
+}
+a {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }

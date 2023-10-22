@@ -1,21 +1,75 @@
 ---
-import "../styles/style.css"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/main.css"
 const {tag} = Astro.params;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
-	</head>
+<BaseLayout>
 	<body>
-		<h1>{Astro.params}</h1>
-		<button id="btn">click</button>
+		<section class="hero"></section>
+		<section class="bg-1">
+			<div class="container">
+				<div class="flex-column center align-center">
+					<h2 class="white-text center-font">Be the one to unlock the Future</h1>
+					<p class="bright-text center-font narrow">Be more than a spectator in the digital age - be a creator, a problem-solver, a web pro. Your mastery of coding and digital marketing isn't just a skill; it's a chance to leave your mark on the ever-evolving canvas of the online world.</p>
+					<div class="topics">
+						<div class="content-wrapper">
+							<h4 class="white-text">We focus on topics that move the world</h4>
+							<p class="bright-text">> Web Design / Development</p>
+							<p class="bright-text">> Coding</p>
+							<p class="bright-text">> Digital marketing</p>
+							<p class="bright-text">> Artificial intelligence / Machine learning</p>
+							<p class="bright-text">> Algorithms / Data Structure</p>
+							<p class="bright-text">Adding more topics in <span class="brand-text">/home/Section-1/Topics...</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-2">
+			<div class="container">
+				<div class="flex-column center align-center">
+					<h2 class="white-text center-font">Together Towards Greatness</h1>
+					<div class="flex-row gap">
+						<div class="card base-60">
+							<h3 class="white-text">Join us</h3>
+							<p class="bright-text">Our community is a hub of passionate learners, where knowledge knows no boundaries. We believe in sharing, learning, and growing as a collective force.</p>
+						</div>
+						<div class="card base-40"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-1">
+			<div class="container">
+				<div class="flex-row">
+					<div class="content-wrapper">
+						<h4 class="bright-text">About me and my Blog</h4>
+						<h2 class="white-text">Learning Unveiled</h2>
+						<p class="bright-text narrow">I'm on a perpetual quest for knowledge, just like you. Through my blog, I share my journey of constant improvement, shedding light on my discoveries, challenges, and triumphs.</p>
+						<div class="button-row">
+							<button class="secondary-cta">Read Blog</button>
+							<a href="" class="tertiary-cta">Learn more</a>
+						</div>
+					</div>
+					<div class="content-wrapper"></div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-2">
+			<div class="container">
+				<div class="flex-column align-center">
+					<h2 class="white-text">Become an Insider</h2>
+					<p class="bright-text center-font narrow">Stay Ahead of your competitiors. Join our newsletter to be part of a network That always keeps you up to Date in our industry. Get exclusive access to the latest developments and Technolgies, insider tips, and a community that fuels your digital ambitions.</p>
+					<div class="button-row">
+						<button class="primary-cta">Join Newsletter</button>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 	<script>
 		
 	</script>
-</html>
+</BaseLayout>
+	
