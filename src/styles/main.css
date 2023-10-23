@@ -23,10 +23,12 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
+    z-index: 3;
 }
 section {
     padding: 128px 0 128px 0;
     position: relative;
+    overflow: hidden;
 }
 section.bg-1 {
     
@@ -50,11 +52,10 @@ section.bg-2 {
 }
 section.hero {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     scroll-snap-type: y mandatory;
-    background-image: url("../resources/final-bg.webp");
-    background-size: cover;
-    background-position: top;
-    background-position-y: 50%;
     z-index: 1; /* To ensure the background is behind the skyscrapers */
 }
 section.hero::before {
@@ -65,17 +66,129 @@ section.hero::before {
     left: 0;
     width: 100%;
     height: 30%;
+    z-index: 3;
 }
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../resources/final-bg.webp");
+    background-size: cover;
+    background-position: top;
+    /* background-position-y: 25%; */
+    z-index: 1; /* To ensure the background is behind the skyscrapers */
+}
+.left-latern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/left-latern.webp');
+    background-size: cover;
+    background-position: top;
+    transform: translateY(0);
+    z-index: 2; /* To ensure the background is behind the skyscrapers */
+}
+.right-latern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/right-latern.webp');
+    background-size: cover;
+    background-position: top;
+    transform: translateY(0);
+    z-index: 2; /* To ensure the background is behind the skyscrapers */
+}
+.moving {
+    position: absolute;
+    bottom: -35vw;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* transform: translateX(-50%) translateY(var(--move)); */
+    transform: translateY(0);
+    background-image: url('../resources/moving.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 2; /* To ensure skyscrapers are in front of the background */
+}
+
 section.footer {
     padding-top: 0;
-    padding-bottom: 128px;
+    padding-bottom: 64px;
     background-color: var(--bg-2);
 }
 .card {
     border: solid 3px var(--outline);
+    display: flex;
+    justify-content: center;
+    align-content: center;
     border-radius: 16px;
     background-color: var(--card);
     padding: 2rem 3rem;
+}
+
+.social {
+    z-index: 11;
+}
+.social:hover path {
+    fill: #FF5733; /* Change to your desired hover color */
+}
+
+.card.move {
+    position: relative;
+}
+.card.move:hover::before {
+    opacity: 1;
+}
+.card.move::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        /* 400px circle at 10px 10px, */
+        var(--cta),
+        transparent 40%
+    );
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    cursor: pointer;
+    /* z-index: 10; */
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+}
+
+.animated-card {
+    position: absolute;
+    
+    background-color: white;
+    z-index: 3;
+}
+.animated-card:nth-child(3) {
+    background-color: rgb(219, 219, 219);
+    transform: translateX(-10%);
+}
+.animated-card:nth-child(2) {
+    background-color: rgb(196, 196, 196);
+    transform: translateX(-20%);
+}
+.animated-card:nth-child(1) {
+    background-color: rgb(167, 167, 167);
+    transform: translateX(-30%), translateZ(50px), perspective(5000px);
+}
+.animated-cards, .animated-card {
+    height: 310px;
+    width: 200px;
 }
 .topics {
     width: 80%;
@@ -95,6 +208,9 @@ section.footer {
 }
 .gap {
     gap: 1.5rem;
+}
+.big-gap {
+    gap: 5rem;
 }
 .button-row {
     display: flex;
@@ -120,6 +236,9 @@ section.footer {
 .align-start {
     align-items: flex-start;
 }
+.shrink {
+    flex-shrink: 2;
+}
 .navbar {
     padding: 32px 0 32px 0;
     position: fixed;
@@ -130,6 +249,10 @@ section.footer {
 .wide-container {
     max-width: 1400px;
     margin: 0 auto;
+}
+.dark-border {
+    border-bottom: solid 3px var(--outline);
+    padding-bottom: 64px;
 }
 .nav-link {
     padding: 0 16px 0 16px;
@@ -143,6 +266,12 @@ section.footer {
 .base-60 {
     flex-basis: 60%;
 }
+.content-wrapper {
+    position: relative;
+    /* height: 100%;
+    width: 100%; */
+}
+
 .content-wrapper.left {
 
 }
@@ -151,12 +280,14 @@ section.footer {
 }
 h1 {
     font-size: 75.76px;
+    font-weight:600;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5em;
     text-transform: uppercase;
 }
 h2 {
     font-size: 56.83px;
+    font-weight:600;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5em;
     text-transform: uppercase;
@@ -164,12 +295,14 @@ h2 {
 }
 h3 {
     font-size: 42.63px;
+    font-weight:600;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5em;
     text-transform: uppercase;
 }
 h4 {
     font-size: 23.99px;
+    font-weight:600;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5em;
 }

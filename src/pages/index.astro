@@ -6,7 +6,23 @@ const {tag} = Astro.params;
 
 <BaseLayout>
 	<body>
-		<section class="hero"></section>
+		<section class="hero">
+			
+			<div class="container">
+				<div class="flex-column align-center" style="margin-bottom: 64px;">
+					<h1 class="white-text center-font">Our Journey Of Becoming a Tech Pro</h1>
+					<h4 class="white-text center-font narrow">You Love Websites and everything about them? Then this is the right Place for you!</h4>
+					<div class="button-row">
+						<button class="primary-cta">Join Community</button>
+						<button class="secondary-cta">Read Blog</button>
+					</div>
+				</div>
+			</div>
+			<div class="background"></div>
+			<div class="left-latern"></div>
+			<div class="right-latern"></div>
+			<div class="moving"></div>
+		</section>
 		<section class="bg-1">
 			<div class="container">
 				<div class="flex-column center align-center">
@@ -32,17 +48,46 @@ const {tag} = Astro.params;
 					<h2 class="white-text center-font">Together Towards Greatness</h1>
 					<div class="flex-row gap">
 						<div class="card base-60">
-							<h3 class="white-text">Join us</h3>
-							<p class="bright-text">Our community is a hub of passionate learners, where knowledge knows no boundaries. We believe in sharing, learning, and growing as a collective force.</p>
+							<div class="content-wrapper">
+								<h3 class="white-text">Join us</h3>
+								<p class="bright-text">Our community is a hub of passionate learners, where knowledge knows no boundaries. We believe in sharing, learning, and growing as a collective force.</p>
+							</div>
+							
 						</div>
-						<div class="card base-40"></div>
+						<div class="card base-40 move">
+							<div class="flex-row center align-center">
+								<svg class="social" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M48 0C21.48 0 0 21.48 0 48C0 69.24 13.74 87.18 32.82 93.54C35.22 93.96 36.12 92.52 36.12 91.26C36.12 90.12 36.06 86.34 36.06 82.32C24 84.54 20.88 79.38 19.92 76.68C19.38 75.3 17.04 71.04 15 69.9C13.32 69 10.92 66.78 14.94 66.72C18.72 66.66 21.42 70.2 22.32 71.64C26.64 78.9 33.54 76.86 36.3 75.6C36.72 72.48 37.98 70.38 39.36 69.18C28.68 67.98 17.52 63.84 17.52 45.48C17.52 40.26 19.38 35.94 22.44 32.58C21.96 31.38 20.28 26.46 22.92 19.86C22.92 19.86 26.94 18.6 36.12 24.78C39.96 23.7 44.04 23.16 48.12 23.16C52.2 23.16 56.28 23.7 60.12 24.78C69.3 18.54 73.32 19.86 73.32 19.86C75.96 26.46 74.28 31.38 73.8 32.58C76.86 35.94 78.72 40.2 78.72 45.48C78.72 63.9 67.5 67.98 56.82 69.18C58.56 70.68 60.06 73.56 60.06 78.06C60.06 84.48 60 89.64 60 91.26C60 92.52 60.9 94.02 63.3 93.54C72.8294 90.3239 81.11 84.2 86.9762 76.0305C92.8423 67.861 95.9983 58.0574 96 48C96 21.48 74.52 0 48 0Z" fill="white"/>
+								</svg>
+								<svg class="social" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_166_20)">
+									<path d="M75.267 0.333984H89.9692L57.8492 40.7162L95.6359 95.6673H66.0492L42.8759 62.3398L16.3603 95.6673H1.64919L36.0048 52.474L-0.244141 0.333984H30.0936L51.0403 30.7967L75.267 0.333984ZM70.107 85.9873H78.2536L25.667 9.50554H16.9247L70.107 85.9873Z" fill="white"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_166_20">
+									<rect width="96" height="96" fill="white"/>
+									</clipPath>
+									</defs>
+								</svg>
+								<svg class="social" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_166_24)">
+									<path d="M81.269 17.4413C75.0441 14.5845 68.4755 12.5455 61.7271 11.3753C61.6659 11.365 61.6031 11.3739 61.5472 11.4007C61.4914 11.4276 61.4452 11.4711 61.4151 11.5253C60.5691 13.0253 59.633 14.9873 58.979 16.5233C51.7047 15.4193 44.3054 15.4193 37.0311 16.5233C36.3015 14.8122 35.4762 13.1435 34.5591 11.5253C34.5283 11.4717 34.482 11.4287 34.4263 11.4019C34.3706 11.3751 34.3081 11.3658 34.2471 11.3753C27.4971 12.5393 20.9271 14.5793 14.7051 17.4413C14.6518 17.4616 14.6073 17.4998 14.5791 17.5493C2.13506 36.1433 -1.27894 54.2813 0.39506 72.1913C0.40106 72.2753 0.45506 72.3593 0.52106 72.4133C7.7674 77.781 15.8726 81.8792 24.4911 84.5333C24.5519 84.5525 24.6173 84.5518 24.6777 84.5313C24.7381 84.5108 24.7905 84.4715 24.8271 84.4193C26.6751 81.8993 28.3191 79.2413 29.7351 76.4453C29.7646 76.3877 29.7747 76.3221 29.7639 76.2583C29.753 76.1945 29.7219 76.1359 29.6751 76.0913C29.644 76.062 29.6073 76.0395 29.5671 76.0253C26.982 75.0318 24.4784 73.8382 22.0791 72.4553C22.012 72.4173 21.9622 72.355 21.9399 72.2813C21.9175 72.2075 21.9244 72.1281 21.9591 72.0593C21.9795 72.0146 22.0103 71.9755 22.0491 71.9453C22.5531 71.5673 23.0571 71.1713 23.5371 70.7753C23.5795 70.7412 23.6303 70.7193 23.6842 70.7119C23.7381 70.7045 23.793 70.7119 23.8431 70.7333C39.5571 77.9093 56.5671 77.9093 72.0891 70.7333C72.1409 70.7108 72.1979 70.7029 72.2539 70.7103C72.3099 70.7177 72.3628 70.7401 72.407 70.7753C72.887 71.1713 73.391 71.5673 73.895 71.9453C73.9359 71.9751 73.9687 72.0146 73.9905 72.0602C74.0124 72.1059 74.0225 72.1562 74.0202 72.2067C74.0178 72.2572 74.0029 72.3064 73.9769 72.3498C73.9509 72.3931 73.9145 72.4294 73.871 72.4553C71.4772 73.8508 68.9704 75.043 66.377 76.0193C66.3357 76.0342 66.2981 76.0581 66.267 76.0892C66.2359 76.1203 66.212 76.1579 66.197 76.1993C66.1832 76.2393 66.1776 76.2818 66.1807 76.3241C66.1838 76.3664 66.1955 76.4076 66.2151 76.4453C67.6551 79.2353 69.305 81.8993 71.117 84.4193C71.1536 84.4715 71.206 84.5108 71.2664 84.5313C71.3268 84.5518 71.3922 84.5525 71.4531 84.5333C80.0859 81.8874 88.2043 77.7887 95.459 72.4133C95.4954 72.3881 95.5256 72.3551 95.5474 72.3167C95.5692 72.2782 95.5821 72.2354 95.585 72.1913C97.589 51.4853 92.231 33.4973 81.389 17.5553C81.3781 17.5289 81.3618 17.5052 81.3411 17.4855C81.3205 17.4659 81.2959 17.4508 81.269 17.4413ZM32.0811 61.2833C27.3471 61.2833 23.4531 56.9393 23.4531 51.6113C23.4531 46.2773 27.2751 41.9333 32.0811 41.9333C36.9231 41.9333 40.7811 46.3133 40.7091 51.6113C40.7091 56.9393 36.8871 61.2833 32.0811 61.2833ZM63.9771 61.2833C59.2491 61.2833 55.3491 56.9393 55.3491 51.6113C55.3491 46.2773 59.1711 41.9333 63.9771 41.9333C68.819 41.9333 72.683 46.3133 72.605 51.6113C72.605 56.9393 68.819 61.2833 63.9771 61.2833Z" fill="white"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_166_24">
+									<rect width="96" height="96" fill="white"/>
+									</clipPath>
+									</defs>
+								</svg>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section class="bg-1">
 			<div class="container">
-				<div class="flex-row">
+				<div class="flex-row space-between">
 					<div class="content-wrapper">
 						<h4 class="bright-text">About me and my Blog</h4>
 						<h2 class="white-text">Learning Unveiled</h2>
@@ -52,7 +97,14 @@ const {tag} = Astro.params;
 							<a href="" class="tertiary-cta">Learn more</a>
 						</div>
 					</div>
-					<div class="content-wrapper"></div>
+					<div class="content-wrapper shrink">
+							<div class="animated-cards">
+								<div class="animated-card"></div>
+								<div class="animated-card"></div>
+								<div class="animated-card"></div>
+								<div class="animated-card"></div>
+							</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -69,7 +121,56 @@ const {tag} = Astro.params;
 		</section>
 	</body>
 	<script>
-		
-	</script>
+        const bg = document.querySelector('.background')
+        const leftLatern = document.querySelector('.left-latern')
+        const rightLatern = document.querySelector('.right-latern')
+        const moving = document.querySelector('.moving')
+
+        window.addEventListener('scroll', () => {
+            console.log(window.pageYOffset, window.innerHeight);
+
+            const move = window.pageYOffset / window.innerHeight * window.innerHeight * 0.5
+
+            console.log(move);
+
+            // moving.style.transform = `translateX(-50%) translateY(-${move}px)`
+            // moving.style.setProperty('--move', `-${move}px`)
+            moving.animate({
+                transform: `translateY(-${move}px)`
+            }, {
+                duration: 3000, fill: "forwards"
+            })
+            leftLatern.animate({
+                transform: `translateY(-${move * 0.3}px)`
+            }, {
+                duration: 3000, fill: "forwards"
+            })
+            rightLatern.animate({
+                transform: `translateY(-${move * 0.5}px)`
+            }, {
+                duration: 3000, fill: "forwards"
+            })
+            bg.animate({
+                backgroundPositionY: `-${move * 0.2}px`,
+                // transform: `translateY(-${move * 0.2}px)`
+            }, {
+                duration: 3000, fill: "forwards"
+            })
+        })
+
+		const gradientCard = document.querySelector('.card.move')
+        const tiltSection = document.getElementById('tilt-section')
+
+        gradientCard.onmousemove = (e) => {
+            const { currentTarget: target } = e
+
+            let x = e.offsetX,
+                y = e.offsetY
+
+            target.style.setProperty("--mouse-x", `${x}px`)
+            target.style.setProperty("--mouse-y", `${y}px`)
+        }
+
+    </script>
 </BaseLayout>
 	
