@@ -26,7 +26,7 @@ body {
     z-index: 3;
 }
 section {
-    padding: 128px 0 128px 0;
+    padding: 128px 5vw 128px 5vw;
     position: relative;
     overflow: hidden;
 }
@@ -201,6 +201,7 @@ section.footer {
 .flex-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .flex-column {
     display: flex;
@@ -235,10 +236,17 @@ section.footer {
 }
 .align-start {
     align-items: flex-start;
+
 }
-.shrink {
+/* .shrink-0 {
+    flex-shrink: 0;
+}
+.shrink-1 {
+    flex-shrink: 1;
+}
+.shrink-2 {
     flex-shrink: 2;
-}
+} */
 .navbar {
     padding: 32px 0 32px 0;
     position: fixed;
@@ -258,13 +266,13 @@ section.footer {
     padding: 0 16px 0 16px;
 }
 .base-40 {
-    flex-basis: 40%;
+    flex: 4 1 0;
 }
 .base-50 {
     flex-basis: 50%;
 }
 .base-60 {
-    flex-basis: 60%;
+    flex: 6 1 0;
 }
 .content-wrapper {
     position: relative;
@@ -278,28 +286,55 @@ section.footer {
 .center-font {
     text-align: center;
 }
-h1 {
-    font-size: 75.76px;
-    font-weight:600;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 56.83px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+    h2 {
+        font-size: 42.63px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+        max-width: 20ch;
+    }
+    h3 {
+        font-size: 31.98px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
 }
-h2 {
-    font-size: 56.83px;
-    font-weight:600;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
-    max-width: 20ch;
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 75.76px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+    h2 {
+        font-size: 56.83px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+        max-width: 20ch;
+    }
+    h3 {
+        font-size: 42.63px;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
 }
-h3 {
-    font-size: 42.63px;
-    font-weight:600;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
-}
+
 h4 {
     font-size: 23.99px;
     font-weight:600;
